@@ -15,26 +15,26 @@ If you want to use it in your application as a library, the following is the sou
 package main
 
 import (
- "flag"
- "fmt"
- "log"
-
- "github.com/borud/hwid"
+    "flag"
+    "fmt"
+    "log"
+    
+    "github.com/borud/hwid"
 )
 
 var intf string
 
 func init() {
- flag.StringVar(&intf, "i", "", "network interface")
- flag.Parse()
+    flag.StringVar(&intf, "i", "", "network interface")
+    flag.Parse()
 }
 
 func main() {
- id, err := hwid.ID(intf)
- if err != nil {
-  log.Fatal(err)
- }
- fmt.Println(id)
+     id, err := hwid.ID(intf)
+     if err != nil {
+         log.Fatal(err)
+     }
+     fmt.Println(id)
 }
 
 ```
